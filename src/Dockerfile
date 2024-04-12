@@ -35,6 +35,7 @@ COPY . ${LAMBDA_TASK_ROOT}
 # Copy in the built dependencies
 COPY --from=build-image /usr/local/bin /usr/local/bin
 COPY --from=build-image /usr/local/lib /usr/local/lib
+COPY --from=build-image /usr/local/lib64 /usr/local/lib64
 COPY --from=build-image /usr/local/ssl /usr/local/ssl
 
 # Pass the name of the function handler as an argument to the runtime

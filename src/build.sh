@@ -3,7 +3,7 @@
 #arm64 builds on Mac M1-3 processors linux/amd64 Or 
 #x86_64 builds for 64 bit processors linux/arm64
 
-architecture=linux/arm64
+architecture=linux/amd64
 
 rm lambda-layer-openssl.zip
 #arm64 builds on Mac M1-3 processors
@@ -38,5 +38,5 @@ sudo docker cp ${container_name}:${path_to_copy} ${output_dir}
 docker container rm --force --volumes ${container_name}
 
 #zip the package up for lambda layer (ditto for Mac)
-ditto -c -k --sequesterRsrc --keepParent ${output_dir} lambda-layer-openssl.zip
-#zip -r lambda-layer-openssl.zip ${output_dir}
+#ditto -c -k --sequesterRsrc --keepParent ${output_dir} lambda-layer-openssl.zip
+zip -r lambda-layer-openssl.zip ${output_dir}
