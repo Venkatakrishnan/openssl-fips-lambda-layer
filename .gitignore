@@ -1,0 +1,4 @@
+.DS_Store
+
+layer/
+src/lambda-layer-openssl.zip
